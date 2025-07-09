@@ -19,13 +19,13 @@ const PortfolioPreview: React.FC = () => {
 
   const item = {
     hidden: { opacity: 0, y: 40 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94]
-      } 
+      }
     },
   };
 
@@ -59,8 +59,8 @@ const PortfolioPreview: React.FC = () => {
             <motion.div
               key={project.id}
               variants={item}
-              whileHover={{ 
-                y: -8, 
+              whileHover={{
+                y: -8,
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
@@ -77,7 +77,7 @@ const PortfolioPreview: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                     <div className="p-6 w-full">
-                      <motion.span 
+                      <motion.span
                         className="inline-block px-3 py-1 bg-accent text-white text-sm rounded-full mb-3"
                         initial={{ y: 20, opacity: 0 }}
                         whileHover={{ y: 0, opacity: 1 }}
@@ -85,7 +85,7 @@ const PortfolioPreview: React.FC = () => {
                       >
                         {project.category}
                       </motion.span>
-                      <motion.h3 
+                      <motion.h3
                         className="font-heading font-bold text-title-large text-white mb-2"
                         initial={{ y: 20, opacity: 0 }}
                         whileHover={{ y: 0, opacity: 1 }}
@@ -102,14 +102,12 @@ const PortfolioPreview: React.FC = () => {
                         <motion.div whileHover={{ x: 4 }}>
                           <ExternalLink size={16} className="mr-2" />
                         </motion.div>
-                          <ExternalLink size={16} className="mr-2" />
-                        </motion.div>
                         <span className="font-body text-sm">View Project</span>
                       </motion.div>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-8">
                   <h3 className="font-heading font-bold text-title-large text-text-primary mb-4 group-hover:text-accent transition-colors duration-300">
                     {project.title}
