@@ -64,7 +64,7 @@ function App() {
 
   return (
     <Router>
-      <div className="font-body bg-surface-tertiary min-h-screen">
+      <div className="font-primary bg-background-primary min-h-screen text-text-primary">
         <Header />
         <main className="pt-20">
           <AnimatedRoutes />
