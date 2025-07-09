@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  tathya-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tathya-website-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+      - ./ssl:/etc/nginx/ssl:ro  # SSL certificates (optional)
+    networks:
+      - tathya-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+
+networks:
+  tathya-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
