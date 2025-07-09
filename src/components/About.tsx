@@ -20,8 +20,8 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-white">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="section-padding bg-background-primary">
+      <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Content */}
           <motion.div
@@ -37,14 +37,14 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="font-heading font-bold text-display-medium text-text-primary mb-6">
+              <h2 className="font-primary font-bold text-display-medium text-text-primary mb-6">
                 About Tathya Technologies
               </h2>
-              <div className="h-1 w-24 bg-accent mb-8 rounded-full"></div>
+              <div className="h-1 w-24 bg-accent-blue mb-8 rounded-full"></div>
             </motion.div>
             
             <motion.p 
-              className="font-body text-title-medium text-text-secondary leading-relaxed mb-8"
+              className="font-primary text-title-medium text-text-secondary leading-relaxed mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -54,7 +54,7 @@ const About: React.FC = () => {
             </motion.p>
             
             <motion.p 
-              className="font-body text-body-large text-text-secondary leading-relaxed mb-12"
+              className="font-primary text-body-large text-text-secondary leading-relaxed mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -76,12 +76,12 @@ const About: React.FC = () => {
                     transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
                   >
                     <motion.div
-                      className={`p-2 rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 mr-4 group-hover:scale-110 transition-transform duration-300`}
+                      className={`p-2 rounded-xl glass-morphism mr-4 group-hover:scale-110 transition-transform duration-300`}
                       whileHover={{ rotate: 10 }}
                     >
                       <IconComponent className={`${feature.color}`} size={20} />
                     </motion.div>
-                    <span className="font-body text-body-large text-text-secondary group-hover:text-text-primary transition-colors duration-300">
+                    <span className="font-primary text-body-large text-text-secondary group-hover:text-text-primary transition-colors duration-300">
                       {feature.text}
                     </span>
                   </motion.div>
@@ -94,17 +94,17 @@ const About: React.FC = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center p-4 rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20"
+                  className="text-center p-4 rounded-2xl glass-morphism"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: stat.delay }}
                   whileHover={{ scale: 1.05, y: -2 }}
                 >
-                  <div className="font-heading font-bold text-headline-medium text-accent mb-2">
+                  <div className="font-primary font-bold text-headline-medium text-accent-blue mb-2">
                     {stat.number}
                   </div>
-                  <div className="font-body text-body-medium text-text-secondary">
+                  <div className="font-primary text-body-medium text-text-secondary">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -122,7 +122,7 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <motion.div
-                className="relative z-10 rounded-3xl overflow-hidden shadow-large"
+                className="relative z-10 rounded-3xl overflow-hidden glass-morphism-strong shadow-glass-lg"
                 whileHover={{ scale: 1.02, rotateY: 5 }}
                 transition={{ duration: 0.6 }}
                 style={{ maxHeight: '450px' }}
@@ -132,12 +132,12 @@ const About: React.FC = () => {
                   alt="Our Team"
                   className="w-full h-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background-primary/60 to-transparent"></div>
               </motion.div>
               
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-large border border-primary-200/20"
+                className="absolute -top-6 -right-6 glass-morphism p-4 rounded-2xl shadow-glow"
                 initial={{ opacity: 0, rotate: -10 }}
                 whileInView={{ opacity: 1, rotate: 0 }}
                 viewport={{ once: true }}
@@ -145,13 +145,13 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05, rotate: 5 }}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-soft"></div>
-                  <span className="font-body text-sm font-medium text-text-primary whitespace-nowrap">Innovation First</span>
+                  <div className="w-3 h-3 bg-accent-green rounded-full animate-pulse"></div>
+                  <span className="font-primary text-sm font-medium text-text-primary whitespace-nowrap">Innovation First</span>
                 </div>
               </motion.div>
               
               <motion.div
-                className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-large border border-primary-200/20"
+                className="absolute -bottom-6 -left-6 glass-morphism p-4 rounded-2xl shadow-glow"
                 initial={{ opacity: 0, rotate: 10 }}
                 whileInView={{ opacity: 1, rotate: 0 }}
                 viewport={{ once: true }}
@@ -159,13 +159,13 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05, rotate: -5 }}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-accent rounded-full animate-pulse-soft"></div>
-                  <span className="font-body text-sm font-medium text-text-primary whitespace-nowrap">Quality Driven</span>
+                  <div className="w-3 h-3 bg-accent-blue rounded-full animate-pulse"></div>
+                  <span className="font-primary text-sm font-medium text-text-primary whitespace-nowrap">Quality Driven</span>
                 </div>
               </motion.div>
               
               {/* Background Decoration */}
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/10 to-accent/5 rounded-3xl transform -translate-x-8 translate-y-8 -z-10"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-accent opacity-20 rounded-3xl transform -translate-x-8 translate-y-8 -z-10"></div>
             </div>
           </motion.div>
         </div>

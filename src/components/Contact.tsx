@@ -33,8 +33,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-primary-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="section-padding bg-background-secondary">
+      <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -42,11 +42,11 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-text-primary mb-4">
+            <h2 className="font-primary font-bold text-display-medium text-text-primary mb-4">
               Get in Touch
             </h2>
-            <div className="h-1 w-20 bg-accent mx-auto mb-6"></div>
-            <p className="font-body text-gray-600 leading-relaxed">
+            <div className="h-1 w-20 bg-accent-blue mx-auto mb-6"></div>
+            <p className="font-primary text-text-secondary leading-relaxed">
               Any Problem. We'll Solve It
             </p>
           </motion.div>
@@ -60,19 +60,19 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="space-y-8"
           >
-            <div className="bg-white rounded-xl shadow-md p-8">
-              <h3 className="font-heading font-semibold text-2xl text-text-primary mb-6">
+            <div className="glass-morphism rounded-xl shadow-glass p-8">
+              <h3 className="font-primary font-semibold text-headline-large text-text-primary mb-6">
                 Find us at the office
               </h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-primary-100 p-3 rounded-full mr-4">
-                    <MapPin className="text-accent" size={20} />
+                  <div className="glass-morphism p-3 rounded-full mr-4">
+                    <MapPin className="text-accent-blue" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-medium text-text-primary mb-1">Our Location</h4>
-                    <p className="font-body text-gray-600">
+                    <h4 className="font-primary font-medium text-text-primary mb-1">Our Location</h4>
+                    <p className="font-primary text-text-secondary">
                       1st Floor, 48 Kustia Road<br />
                       Kolkata - 700039<br />
                       West Bengal<br />
@@ -82,22 +82,22 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-primary-100 p-3 rounded-full mr-4">
-                    <Phone className="text-accent" size={20} />
+                  <div className="glass-morphism p-3 rounded-full mr-4">
+                    <Phone className="text-accent-blue" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-medium text-text-primary mb-1">Contact Sales</h4>
-                    <p className="font-body text-gray-600">+91 98318 87933</p>
+                    <h4 className="font-primary font-medium text-text-primary mb-1">Contact Sales</h4>
+                    <p className="font-primary text-text-secondary">+91 98318 87933</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-primary-100 p-3 rounded-full mr-4">
-                    <Mail className="text-accent" size={20} />
+                  <div className="glass-morphism p-3 rounded-full mr-4">
+                    <Mail className="text-accent-blue" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-heading font-medium text-text-primary mb-1">Business Hours</h4>
-                    <p className="font-body text-gray-600">Mon - Sat, 8:00-22:00</p>
+                    <h4 className="font-primary font-medium text-text-primary mb-1">Business Hours</h4>
+                    <p className="font-primary text-text-secondary">Mon - Sat, 8:00-22:00</p>
                   </div>
                 </div>
               </div>
@@ -110,15 +110,15 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white rounded-xl shadow-md p-8">
-              <h3 className="font-heading font-semibold text-2xl text-text-primary mb-6">
+            <div className="glass-morphism rounded-xl shadow-glass p-8">
+              <h3 className="font-primary font-semibold text-headline-large text-text-primary mb-6">
                 Send Us a Message
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block font-heading font-medium text-text-primary mb-2">
+                    <label htmlFor="name" className="block font-primary font-medium text-text-primary mb-2">
                       Your Name
                     </label>
                     <input
@@ -128,13 +128,13 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-primary-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent font-body"
+                      className="w-full px-4 py-3 bg-background-glass border border-border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent font-primary text-text-primary"
                       placeholder="John Doe"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block font-heading font-medium text-text-primary mb-2">
+                    <label htmlFor="email" className="block font-primary font-medium text-text-primary mb-2">
                       Your Email
                     </label>
                     <input
@@ -144,14 +144,14 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-primary-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent font-body"
+                      className="w-full px-4 py-3 bg-background-glass border border-border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent font-primary text-text-primary"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block font-heading font-medium text-text-primary mb-2">
+                  <label htmlFor="subject" className="block font-primary font-medium text-text-primary mb-2">
                     Subject
                   </label>
                   <input
@@ -161,13 +161,13 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-primary-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent font-body"
+                    className="w-full px-4 py-3 bg-background-glass border border-border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent font-primary text-text-primary"
                     placeholder="How can we help you?"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block font-heading font-medium text-text-primary mb-2">
+                  <label htmlFor="message" className="block font-primary font-medium text-text-primary mb-2">
                     Your Message
                   </label>
                   <textarea
@@ -177,14 +177,14 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-primary-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent font-body resize-none"
+                    className="w-full px-4 py-3 bg-background-glass border border-border-primary rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent font-primary text-text-primary resize-none"
                     placeholder="Tell us about your project or inquiry..."
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent-dark text-white py-3 px-6 rounded-md font-heading font-medium transition-colors duration-200 flex items-center justify-center"
+                  className="w-full neon-button py-3 px-6 rounded-md font-primary font-medium transition-colors duration-200 flex items-center justify-center"
                 >
                   Send Message
                   <Send size={16} className="ml-2" />
