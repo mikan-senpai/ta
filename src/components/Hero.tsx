@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Zap, Shield, Globe } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Shield, Globe, Code2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
