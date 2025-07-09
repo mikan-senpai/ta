@@ -57,8 +57,8 @@ const CompanyMarquee: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-background-secondary border-y border-border-primary overflow-hidden">
-      <div className="container-custom">
+    <section className="py-16 bg-surface-secondary border-y border-primary-200/30 overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,13 +66,13 @@ const CompanyMarquee: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h3 className="font-primary font-semibold text-headline-medium text-text-secondary mb-4">
+          <h3 className="font-heading font-semibold text-headline-medium text-text-secondary mb-4">
             Trusted by Leading Companies
           </h3>
-          <div className="h-0.5 w-16 bg-accent-blue mx-auto rounded-full mb-6"></div>
+          <div className="h-0.5 w-16 bg-accent mx-auto rounded-full mb-6"></div>
           <motion.div
             ref={sloganRef}
-            className="font-primary text-body-large text-accent-blue font-medium"
+            className="font-body text-body-large text-accent font-medium"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
@@ -89,7 +89,7 @@ const CompanyMarquee: React.FC = () => {
         >
           <Marquee
             gradient={true}
-            gradientColor={[10, 10, 10]}
+            gradientColor={[250, 250, 250]}
             gradientWidth={100}
             speed={40}
             pauseOnHover={true}
@@ -102,21 +102,21 @@ const CompanyMarquee: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative w-40 h-20 glass-morphism rounded-xl shadow-glass flex items-center justify-center overflow-hidden group-hover:shadow-glow transition-all duration-300">
+                <div className="relative w-40 h-20 bg-white rounded-xl shadow-soft border border-primary-200/50 flex items-center justify-center overflow-hidden group-hover:shadow-medium transition-all duration-300">
                   <img
                     src={company.logo}
                     alt={company.name}
-                    className="max-w-full max-h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500 p-4"
+                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 p-4"
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = `https://via.placeholder.com/160x80/1a1a2e/ffffff?text=${encodeURIComponent(company.name)}`;
+                      target.src = `https://via.placeholder.com/160x80/f5f5f5/666666?text=${encodeURIComponent(company.name)}`;
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <motion.p
-                  className="text-center mt-3 font-primary text-sm text-text-secondary group-hover:text-text-primary transition-colors duration-300"
+                  className="text-center mt-3 font-body text-sm text-text-secondary group-hover:text-text-primary transition-colors duration-300"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                 >

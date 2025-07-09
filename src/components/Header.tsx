@@ -33,14 +33,14 @@ const Header: React.FC = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-background-primary/90 backdrop-blur-glass shadow-glass border-b border-border-primary'
-          : 'bg-transparent'
-      }`}
+          ? 'bg-white/90 backdrop-blur-xl shadow-xl border border-primary-200/30'
+          : 'bg-white/80 backdrop-blur-xl shadow-soft border border-primary-200/20'
+      } rounded-2xl`}
     >
-      <div className="container-custom">
-        <div className="flex justify-between items-center h-20">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -60,10 +60,10 @@ const Header: React.FC = () => {
               >
                 <Link
                   to={item.href}
-                  className={`relative px-6 py-3 rounded-xl font-primary text-sm font-medium transition-all duration-300 group ${
+                  className={`relative px-4 py-2 rounded-xl font-body text-sm font-medium transition-all duration-300 group ${
                     location.pathname === item.href 
-                      ? 'text-accent-blue' 
-                      : 'text-text-secondary hover:text-text-primary'
+                      ? 'text-accent' 
+                      : 'text-text-primary hover:text-accent'
                   }`}
                 >
                   <motion.span
@@ -73,17 +73,8 @@ const Header: React.FC = () => {
                   >
                     {item.label}
                   </motion.span>
-                  
-                  {/* Hover background */}
                   <motion.div
-                    className="absolute inset-0 bg-background-glass backdrop-blur-glass rounded-xl border border-border-primary opacity-0 group-hover:opacity-100"
-                    initial={false}
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  {/* Active indicator */}
-                  <motion.div
-                    className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-accent-blue rounded-full"
+                    className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-accent rounded-full"
                     animate={{
                       width: location.pathname === item.href ? '60%' : '0%',
                       x: '-50%',
@@ -98,7 +89,7 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Contact Button */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -111,7 +102,7 @@ const Header: React.FC = () => {
             >
               <Link
                 to="/contact"
-                className="neon-button"
+                className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-xl font-body font-medium transition-all duration-300 shadow-medium hover:shadow-large"
               >
                 Get Started
               </Link>
@@ -122,7 +113,7 @@ const Header: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden p-3 rounded-xl text-text-primary hover:bg-background-glass transition-colors duration-200"
+            className="md:hidden p-2 rounded-xl text-text-primary hover:bg-primary-100 transition-colors duration-200"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -161,9 +152,9 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="md:hidden bg-background-primary/95 backdrop-blur-glass border-t border-border-primary"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-primary-200/30 rounded-b-2xl"
           >
-            <div className="container-custom py-6">
+            <div className="px-6 py-6">
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item, index) => (
                   <motion.div
@@ -174,10 +165,10 @@ const Header: React.FC = () => {
                   >
                     <Link
                       to={item.href}
-                      className={`block px-6 py-4 rounded-xl font-primary text-base transition-all duration-200 ${
+                      className={`block px-4 py-3 rounded-xl font-body text-base transition-all duration-200 ${
                         location.pathname === item.href 
-                          ? 'text-accent-blue font-semibold bg-background-glass' 
-                          : 'text-text-secondary hover:text-text-primary hover:bg-background-glass'
+                          ? 'text-accent font-semibold' 
+                          : 'text-text-primary hover:text-accent hover:bg-accent/5'
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -193,7 +184,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to="/contact"
-                    className="block neon-button text-center"
+                    className="block bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-xl font-body font-medium transition-all duration-200 text-center shadow-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     Get Started

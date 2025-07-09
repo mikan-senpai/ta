@@ -4,54 +4,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark theme color palette
-        background: {
-          primary: '#0a0a0a',
-          secondary: '#1a1a2e',
-          tertiary: '#16213e',
-          card: 'rgba(255, 255, 255, 0.05)',
-          glass: 'rgba(255, 255, 255, 0.08)',
+        primary: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         },
         accent: {
-          blue: '#00d4ff',
-          green: '#00ff88',
-          purple: '#8b5cf6',
-          DEFAULT: '#00d4ff',
-          dark: '#0099cc',
-          light: '#33ddff',
+          DEFAULT: '#007AFF',
+          dark: '#0056CC',
+          light: '#4DA2FF',
         },
         text: {
-          primary: '#ffffff',
-          secondary: '#b0b0b0',
-          muted: '#808080',
-          accent: '#00d4ff',
-        },
-        border: {
-          primary: 'rgba(255, 255, 255, 0.1)',
-          secondary: 'rgba(255, 255, 255, 0.05)',
-          accent: 'rgba(0, 212, 255, 0.3)',
-        },
-        // Legacy colors for compatibility
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0a0a0a',
+          primary: '#0a0a0a',
+          secondary: '#525252',
         },
         surface: {
-          primary: '#0a0a0a',
-          secondary: '#1a1a2e',
-          tertiary: '#16213e',
+          primary: '#ffffff',
+          secondary: '#fafafa',
+          tertiary: '#fdfdfd',
         },
         success: {
           50: '#f0fdf4',
-          500: '#00ff88',
+          500: '#22c55e',
           700: '#15803d',
         },
         warning: {
@@ -66,13 +47,10 @@ export default {
         },
       },
       fontFamily: {
-        primary: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        secondary: ['Space Grotesk', 'Inter', 'sans-serif'],
-        heading: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        body: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'sans-serif'],
+        body: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Text', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['5rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
         'display-large': ['4rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
         'display-medium': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
         'display-small': ['2.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
@@ -95,26 +73,19 @@ export default {
         '3xl': '2rem',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(0, 212, 255, 0.3)',
-        'glow-lg': '0 0 40px rgba(0, 212, 255, 0.2)',
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
-        'glass-lg': '0 20px 40px rgba(0, 0, 0, 0.4)',
-        'neon': '0 0 5px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3), 0 0 35px rgba(0, 212, 255, 0.1)',
-        'soft': '0 1px 3px rgba(255, 255, 255, 0.05), 0 1px 2px rgba(255, 255, 255, 0.1)',
-        'medium': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
-        'large': '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
-        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
+        'soft': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)',
+        'medium': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'large': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'apple': '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'glow': '0 0 20px rgba(0, 122, 255, 0.15)',
+        'floating': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'apple': '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'glow': '0 0 20px rgba(0, 122, 255, 0.15)',
+        'floating': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       },
       backdropBlur: {
         'xs': '2px',
-        'glass': '12px',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-dark': 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #00d4ff 0%, #8b5cf6 100%)',
-        'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -123,12 +94,11 @@ export default {
         'slide-in-right': 'slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         'scale-in': 'scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+        'bounce-soft': 'bounceSoft 2s ease-in-out infinite',
+        'text-reveal': 'textReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+        'marquee': 'marquee 25s linear infinite',
         'gradient-shift': 'gradientShift 3s ease-in-out infinite',
-        'typewriter': 'typewriter 3s steps(40) 1s forwards',
-        'blink': 'blink 1s infinite',
-        'particle-float': 'particleFloat 8s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -153,32 +123,27 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(0, 212, 255, 0.6)' },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
         },
-        pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(0, 212, 255, 0.6)' },
+        bounceSoft: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        textReveal: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
-        },
-        typewriter: {
-          '0%': { width: '0' },
-          '100%': { width: '100%' },
-        },
-        blink: {
-          '0%, 50%': { opacity: '1' },
-          '51%, 100%': { opacity: '0' },
-        },
-        particleFloat: {
-          '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
-          '33%': { transform: 'translateY(-30px) translateX(20px)' },
-          '66%': { transform: 'translateY(-10px) translateX(-20px)' },
         },
       },
     },
