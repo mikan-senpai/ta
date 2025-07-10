@@ -355,3 +355,184 @@ For deployment issues or questions:
 ## 📝 License
 
 This deployment configuration is part of the Tathya Technologies website project.
+
+
+
+
+# in the server
+Perfect! Since you're on Windows and the `chmod` command isn't available, let me provide you with the complete deployment steps for your server. Here's what you'll do after SSH-ing to your server and cloning the repository:
+
+## 🚀 Complete Deployment Steps
+
+### 1. SSH to Your Server and Clone the Repository
+
+```bash
+# SSH to your server
+ssh user@your-server-ip
+
+# Clone your repository
+git clone <your-repository-url>
+cd ta
+
+# Checkout to docker-deployment branch
+git checkout docker-deployment
+```
+
+### 2. Make Scripts Executable (Linux/Server)
+
+```bash
+# Make deployment scripts executable
+chmod +x deploy.sh
+chmod +x deploy-ssl.sh
+```
+
+### 3. Choose Your Deployment Option
+
+#### Option A: HTTP Deployment (Quick Start)
+```bash
+# Deploy with HTTP (port 80)
+./deploy.sh
+```
+
+#### Option B: HTTPS Deployment (Recommended for Production)
+```bash
+# Deploy with SSL/HTTPS (ports 80 & 443)
+./deploy-ssl.sh
+```
+
+### 4. Verify Deployment
+
+```bash
+# Check if container is running
+docker ps
+
+# Check application status
+curl http://localhost/health
+# or for HTTPS
+curl -k https://localhost/health
+
+# View logs
+docker-compose logs -f
+```
+
+## 📋 What Each Script Does
+
+### `deploy.sh` (HTTP Deployment)
+- ✅ Builds Docker image with Node.js and nginx
+- ✅ Creates logs directory
+- ✅ Starts container on port 80
+- ✅ Sets up health check
+- ✅ Provides status feedback
+
+### `deploy-ssl.sh` (HTTPS Deployment)
+- ✅ Generates self-signed SSL certificates (for development)
+- ✅ Builds Docker image with SSL support
+- ✅ Configures HTTPS on port 443
+- ✅ Sets up HTTP to HTTPS redirect
+- ✅ Includes security headers and resource limits
+
+## 🔧 Manual Commands (if needed)
+
+If you prefer manual deployment:
+
+```bash
+# Build the image
+docker-compose build --no-cache
+
+# Start the application
+docker-compose up -d
+
+# Check status
+docker-compose ps
+
+# View logs
+docker-compose logs -f
+```
+
+## 🌐 Access Your Website
+
+After deployment, your website will be available at:
+
+- **HTTP**: `http://your-server-ip`
+- **HTTPS**: `https://your-server-ip` (if using SSL deployment)
+
+## 🔍 Troubleshooting Commands
+
+```bash
+# Check container status
+docker ps
+
+# View container logs
+docker logs tathya-website
+
+# Restart application
+docker-compose restart
+
+# Stop application
+docker-compose down
+
+# Rebuild and restart
+docker-compose up -d --build
+```
+
+## 📊 Monitoring
+
+```bash
+# Health check
+curl http://localhost/health
+
+# View logs
+tail -f logs/nginx/access.log
+tail -f logs/nginx/error.log
+
+# Check resource usage
+docker stats
+```
+
+## 🔒 For Production (SSL Certificates)
+
+If you want to use valid SSL certificates instead of self-signed ones:
+
+1. **Obtain SSL certificates** from your domain provider
+2. **Create ssl directory**:
+   ```bash
+   mkdir -p ssl
+   ```
+3. **Place your certificates**:
+   ```bash
+   # Copy your certificates to ssl directory
+   cp your-certificate.crt ssl/cert.pem
+   cp your-private-key.key ssl/key.pem
+   ```
+4. **Set proper permissions**:
+   ```bash
+   chmod 600 ssl/key.pem
+   chmod 644 ssl/cert.pem
+   ```
+5. **Deploy with SSL**:
+   ```bash
+   ./deploy-ssl.sh
+   ```
+
+## 🎯 Quick Start Summary
+
+```bash
+# 1. SSH to server
+ssh user@your-server-ip
+
+# 2. Clone and setup
+git clone <your-repo>
+cd ta
+git checkout docker-deployment
+chmod +x deploy.sh deploy-ssl.sh
+
+# 3. Deploy (choose one)
+./deploy.sh          # HTTP deployment
+# OR
+./deploy-ssl.sh      # HTTPS deployment
+
+# 4. Verify
+curl http://localhost/health
+```
+
+Your website will be live and accessible via your server's IP address! The deployment includes all the optimizations for performance, security, and monitoring.
