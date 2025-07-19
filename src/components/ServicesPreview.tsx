@@ -67,13 +67,13 @@ const ServicesPreview: React.FC = () => {
 
   const item = {
     hidden: { opacity: 0, y: 40 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94]
-      } 
+      }
     },
   };
 
@@ -109,28 +109,28 @@ const ServicesPreview: React.FC = () => {
               <motion.div
                 key={service.id}
                 variants={item}
-                whileHover={{ 
-                  y: -8, 
+                whileHover={{
+                  y: -8,
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
                 className={`bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-3xl p-8 transition-all duration-500 hover:shadow-large border border-primary-200/50 group cursor-pointer`}
               >
-                <motion.div 
+                <motion.div
                   className="bg-white p-4 rounded-2xl w-16 h-16 flex items-center justify-center shadow-soft mb-6 group-hover:scale-110 transition-transform duration-300"
                   whileHover={{ rotate: 10 }}
                 >
                   <IconComponent className={`${service.iconColor}`} size={28} />
                 </motion.div>
-                
+
                 <h3 className="font-heading font-bold text-title-large text-text-primary mb-4 group-hover:text-accent transition-colors duration-300">
                   {service.title}
                 </h3>
-                
+
                 <p className="font-body text-body-large text-text-secondary leading-relaxed group-hover:text-text-primary transition-colors duration-300">
                   {service.description}
                 </p>
-                
+
                 <motion.div
                   className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={{ x: -10 }}
