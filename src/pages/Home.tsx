@@ -6,7 +6,7 @@ import PortfolioPreview from '../components/PortfolioPreview';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
-import ClientLogos from '../components/ClientLogos';
+import ClientLogos from '../components/clientLogos';
 const Home: React.FC = () => {
   return (
     <div className="bg-surface-tertiary">
