@@ -6,7 +6,7 @@ const Portfolio: React.FC = () => {
   return (
     <div className="min-h-screen bg-surface-tertiary">
       {/* Hero Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
+      {/* <section className="py-24 lg:py-32 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -22,8 +22,8 @@ const Portfolio: React.FC = () => {
             </p>
           </motion.div>
         </div>
-      </section>
-      
+      </section> */}
+
       <div className="py-8">
         <PortfolioComponent />
       </div>

@@ -59,7 +59,7 @@ function AnimatedRoutes() {
 
 function App() {
   useEffect(() => {
-    document.title = 'Tathya Technologies Pvt. Ltd. (OPC) | SaaS Company';
+    document.title = 'Tathya Technologies Pvt. Ltd. (OPC)';
   }, []);
 
   return (
